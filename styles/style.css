@@ -1,0 +1,58 @@
+body{
+    background-color: black;
+    font-family: 'Lato', serif;
+    font-size: 1.25em;
+    color: white;
+    overflow-x: hidden;
+}
+header{
+    font-size: 8em;
+    font-family: 'Oswald', sans-serif;
+    margin: auto;
+    text-align: center;
+}
+h1,h2{
+    font-family: 'Oswald', sans-serif;
+}
+h1, nav, .col-4{
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+a{
+    color: silver;
+    text-decoration: none;
+    margin: 2em;
+}
+a:hover{
+    color: lightgrey;
+    text-decoration: none;
+}
+a:active{
+    color: white;
+}
+.row{
+    padding: 1em;
+}
+img{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+footer{
+    margin-bottom: 0;
+}
+footer ul li, nav ul li{
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+}
+.wrapper{
+    display: flex;
+}
+.inline{
+    margin: auto;
+}
+@media (max-width: 780px) {
+    
+}
