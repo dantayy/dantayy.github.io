@@ -49,7 +49,7 @@ a:active{
 }
 /*mobile modifications*/
 @media (max-width: 780px) {
-    body{
-        font-size: 1.5em;
+    header{
+        font-size: 3em;
     }
 }
