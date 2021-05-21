@@ -1,10 +1,168 @@
 /*basic styling*/
-body{
+body, html{
     background-color: white;
+    background-size: cover;
     font-family: 'Lato', serif;
     font-size: 1.25em;
     color: white;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+@keyframes paralax-gif {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 100%;
+    }
+}
+
+.paralax {
+    /* image to use */
+    background: url('../images/sunsettest.gif') 0 0 no-repeat;
+
+    /* paralax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    animation: paralax-gif steps(28) 1s infinite both;
+}
+
+:root{
+    --scroll-percentage: 0s;
+}
+
+.controlled-by-scroll {
+    animation-play-state: paused;
+    animation-duration: 101s;
+    animation-delay: var(--scroll-percentage);
+}
+
+#sky {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    animation: sky-fade;
+    animation-play-state: paused;
+    animation-duration: 101s;
+    animation-delay: var(--scroll-percentage);
+}
+@keyframes sky-fade {
+    from{
+        background-color: #FF3300;
+    }
+    to{
+        background-color: #020713;
+    }
+}
+.star {
+    fill: white;
+    r: 0.25%;
+    animation: star-fade;
+    animation-play-state: paused;
+    animation-duration: 101s;
+    animation-delay: var(--scroll-percentage);
+}
+@keyframes star-fade {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+#moon{
+    cx: 10%;
+    r: 5%;
+    animation: moon-up;
+    animation-play-state: paused;
+    animation-duration: 101s;
+    animation-delay: var(--scroll-percentage);
+}
+@keyframes moon-up {
+    from {
+        cy: 95%;
+    }
+    to {
+        cy: 15%;
+    }
+}
+
+#sun {
+    cx: 50%;
+    r: 10%;
+    animation: sun-down;
+    animation-play-state: paused;
+    animation-duration: 101s;
+    animation-delay: var(--scroll-percentage);
+}
+@keyframes sun-down {
+    from {
+        cy: 20%;
+        fill: #FCAA18;
+    }
+    to {
+        cy: 100%;
+        fill: #FD3516;
+    }    
+}
+
+#lake{
+    rx: 60%;
+    ry: 10%;
+    cx: 50%;
+    animation: lake-rise;
+    animation-play-state: paused;
+    animation-duration: 101s;
+    animation-delay: var(--scroll-percentage);
+}
+@keyframes lake-rise{
+    from {
+        cy: 120%;
+        fill: #2059E9;
+    }
+    to {
+        cy: 95%;
+        fill: #103BA6;
+    }
+}
+
+.tree-greens{
+    animation: green-fade;
+    animation-play-state: paused;
+    animation-duration: 101s;
+    animation-delay: var(--scroll-percentage);
+}
+@keyframes green-fade{
+    from{
+        fill: #0B5B2F;
+        transform: translate(0,0);
+    }
+    to{
+        fill: #063119;
+        transform: translate(0, -1); /*this needs to be here for the animation to happen, but the values are overwritten by the translate that's inline?  why???*/
+    }
+}
+
+.mountain-tops{
+    animation: mountain-fade;
+    animation-play-state: paused;
+    animation-duration: 101s;
+    animation-delay: var(--scroll-percentage);
+}
+@keyframes mountain-fade{
+    from{
+        fill: #341209;
+        transform: translate(0,0);
+    }
+    to{
+        fill: #DB5530;
+        transform: translate(0, -1); /*this needs to be here for the animation to happen, but the values are overwritten by the translate that's inline?  why???*/
+    }
 }
 header{
     font-size: 8em;
@@ -20,15 +178,21 @@ nav, .col-4{
 }
 ul{
     list-style: none;
+    padding-left: 0;
 }
 li{
-    text-align: center;
     display: inline-block;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin: 1em;
 }
+
 .row{
-    padding: 1em;
+    padding: 2em;
+}
+.content{
+    background-color: rgba(0, 0, 0, .3);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
 }
 img{
     margin-top: 0.5em;
@@ -42,7 +206,7 @@ a{
 a:hover{
     color: silver;
     transition: 1s;
-    text-decoration: none;
+    text-decoration: underline;
 }
 a:active{
     color: lightgrey;
@@ -51,5 +215,11 @@ a:active{
 @media (max-width: 780px) {
     header{
         font-size: 3em;
+    }
+    .row{
+        padding: 0.5em;
+    }
+    a:hover{
+        text-decoration: none;
     }
 }
