@@ -1,36 +1,65 @@
 /*basic styling*/
 body, html{
-    background-color: white;
-    background-size: cover;
     font-family: 'Lato', serif;
     font-size: 1.25em;
     color: white;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
-
-@keyframes paralax-gif {
-    0% {
-      background-position: 0%;
+header{
+    font-size: 8em;
+    font-family: 'Oswald', sans-serif;
+}
+h1,h2{
+    font-family: 'Oswald', sans-serif;
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+li{
+    display: inline-block;
+    margin: 1em;
+}
+.row{
+    padding: 2em;
+}
+.content{
+    background-color: rgba(0, 0, 0, .8);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+}
+img{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+/*link interaction stylings*/
+a{
+    color: white;
+    text-decoration: underline;
+}
+a:hover{
+    color: silver;
+    transition: 1s;
+}
+a:active{
+    color: lightgrey;
+}
+a:visited{
+    color: gray;
+}
+/*mobile modifications*/
+@media (max-width: 780px) {
+    header{
+        font-size: 2em;
     }
-    100% {
-      background-position: 100%;
+    .row{
+        padding: 0.5em;
     }
 }
 
-.paralax {
-    /* image to use */
-    background: url('../images/sunsettest.gif') 0 0 no-repeat;
-
-    /* paralax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    animation: paralax-gif steps(28) 1s infinite both;
-}
-
+/*CSS for SVG paralax background*/
 :root{
     --scroll-percentage: 0s;
 }
@@ -58,6 +87,7 @@ body, html{
         background-color: #020713;
     }
 }
+
 .star {
     fill: white;
     r: 0.25%;
@@ -162,64 +192,5 @@ body, html{
     to{
         fill: #DB5530;
         transform: translate(0, -1); /*this needs to be here for the animation to happen, but the values are overwritten by the translate that's inline?  why???*/
-    }
-}
-header{
-    font-size: 8em;
-    font-family: 'Oswald', sans-serif;
-    margin: auto;
-    text-align: center;
-}
-h1,h2{
-    font-family: 'Oswald', sans-serif;
-}
-nav, .col-4{
-    text-align: center;
-}
-ul{
-    list-style: none;
-    padding-left: 0;
-}
-li{
-    display: inline-block;
-    margin: 1em;
-}
-
-.row{
-    padding: 2em;
-}
-.content{
-    background-color: rgba(0, 0, 0, .3);
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    text-align: center;
-}
-img{
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-/*link interaction stylings*/
-a{
-    color: grey;
-    text-decoration: none;
-}
-a:hover{
-    color: silver;
-    transition: 1s;
-    text-decoration: underline;
-}
-a:active{
-    color: lightgrey;
-}
-/*mobile modifications*/
-@media (max-width: 780px) {
-    header{
-        font-size: 3em;
-    }
-    .row{
-        padding: 0.5em;
-    }
-    a:hover{
-        text-decoration: none;
     }
 }
