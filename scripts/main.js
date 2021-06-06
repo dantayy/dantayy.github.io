@@ -17,6 +17,12 @@ window.onload = (e) => {
         let winHeight = $(window).height();
         let scrollPercent = (scrollTop) / (docHeight - winHeight);
         let scrollPercentRounded = Math.round(scrollPercent*100);
+        if(scrollPercentRounded < 0){
+            scrollPercentRounded = 0;
+        }
+        else if(scrollPercentRounded > 100){
+            scrollPercentRounded = 100;
+        }
         root.style.setProperty('--scroll-percentage', -scrollPercentRounded + "s");
         //console.log("New scroll percent is " + scrollPercentRounded);
         // hook this up the the requestanimationframe so that it fires it in a timely interval
